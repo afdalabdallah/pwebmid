@@ -1,0 +1,52 @@
+header {
+    width: 100%;
+    top: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 2%;
+    background-color: #000000;
+    position: fixed;
+}
+
+header img {
+    cursor: pointer;
+    height: 7vh;
+}
+
+#logo3 a {
+    cursor: pointer;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    color: #bf1b2c;
+    text-decoration: none;
+}
+
+.nav__links a {
+    list-style: none;
+    text-decoration: none;
+    color: #2dbe78;
+    font-weight: 500;
+    font-size: 36px;
+}
+
+.nav__links li {
+    display: inline-block;
+    padding: 0px 40px;
+}
+
+.nav__links li a:hover {
+    transition: all 0.3s ease 0s;
+    color: white;
+}
+
+.nav__links li:nth-child(3) {
+    background-color: #2dbe78;
+    border-radius: 58px;
+}
+
+.nav__links li:nth-child(3) a {
+    color: black;
+}

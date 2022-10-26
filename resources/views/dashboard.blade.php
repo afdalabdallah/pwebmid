@@ -1,12 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dashboard</title>
-</head>
+@extends('layouts.app')
+
+@section('title','Dashboard | Rent')
+
+@section('stylesheet')
+<link rel="stylesheet" href= {{ asset("css/dashboard.css") }}>
+@endsection
+
+@section('content')
+
 <body>
-    <h1>Halo Nama saya adalah ini itu</h1>
+    <div class="container">
+        <div class="searchRoom">
+            <img src="img/searchBuilding.png" id="searchImage" alt="">
+            <div class="searchDesc">
+                <h1>LET'S FIND <span>THE BUILDING</span> YOU NEED.</h1>
+            </div>
+        </div>
+        <div>
+           
+            
+        </div>
+    </div>
 </body>
-</html>
+@endsection

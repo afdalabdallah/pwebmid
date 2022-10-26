@@ -1,18 +1,32 @@
-@extends('layouts.app')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                <div class="card-body">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Rent.in</title>
+    <link rel="stylesheet" href={{ asset('css/register.css') }}>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="img/Logo.png" alt="">
+        </header>
+        <div class="row-1">
+            <div class="col-1">
+                <h1>Serahkan kepada kami!</h1>
+                <h2>Kami siap membantu menyediakan
+                    ruangan yang anda butuhkan</h2>
+            </div>
+            <div class="col-2">
+                <h3>REGISTER</h3>
+                <div class="login-form">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('First Name') }}</label>
+                            <label for="first_name" class="col-md-4 col-form-label text-md-end">{{ __('First Name') }}</label>
 
                             <div class="col-md-6">
                                 <input id="first_name" type="text" name="first_name" value="{{ old('first_name') }}" required autocomplete="name" autofocus>
@@ -87,5 +101,6 @@
             </div>
         </div>
     </div>
-</div>
-@endsection
+</body>
+</html>
+

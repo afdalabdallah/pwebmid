@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: none;
+    font-family: poppins, sans-serif;
+}
+
+header {
+    width: 100%;
+    top: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 2%;
+    background-color: #000000;
+    position: fixed;
+}
+
+.container {
+    margin-top: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header img {
+    cursor: pointer;
+    height: 7vh;
+}
+
+#logo3 a {
+    cursor: pointer;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    color: #bf1b2c;
+    text-decoration: none;
+}
+
+.nav__links a {
+    list-style: none;
+    text-decoration: none;
+    color: #2dbe78;
+    font-weight: 500;
+    font-size: 36px;
+}
+
+.nav__links li {
+    display: inline-block;
+    padding: 0px 40px;
+}
+
+.nav__links li a:hover {
+    transition: all 0.3s ease 0s;
+    color: white;
+}
+
+.nav__links li:nth-child(3) {
+    background-color: #2dbe78;
+    border-radius: 58px;
+}
+
+.nav__links li:nth-child(3) a {
+    color: black;
+}
+
+#searchImage {
+    width: 95%;
+    height: 95%;
+}
+
+.searchRoom {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchDesc {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+}
+
+.searchDesc span {
+    color: #2dbe78;
+}
+
+h1 {
+    color: white;
+    font-size: 96px;
+    font-weight: 900;
+}

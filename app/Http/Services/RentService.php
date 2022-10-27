@@ -14,18 +14,18 @@ class RentService
     {
 
         $tableData = DB::table('rents')
-            ->join('bulding', 'building.id', '=', 'rents.building_id')
-            ->select('bulding.name', 'building.price', 'rents.*')
+            ->join('building', 'building.id', '=', 'rents.building_id')
+            ->select('building.name', 'building.price', 'rents.*')
             ->where('rents.user_id', $id_user);
         $tableData = $tableData->get();
-        return (['rentData' => $tableData]);
+        return ($tableData);
     }
 
     public static function getDetail($id)
     {
         $tableData = DB::table('rents')
             ->join('building', 'building.id', '=', 'rents.building_id')
-            ->select('rents.*', 'bulding.name', 'building.price', 'building.address')
+            ->select('rents.*', 'building.name', 'building.price', 'building.address')
             ->where('rents.id', $id);
         $tableData = $tableData->get()->first();
         return (['rentDetail' => $tableData]);
@@ -49,7 +49,12 @@ class RentService
         $interval = $datetime1->diff($datetime2);
         $days = $interval->format('%a');
 
-        $total_price = (float)$requestData['total_price'] * (float)($days);
+        if($days == 0){
+            $days += 1;
+        }
+
+        $total_price = (float)$requestData['price'] * (float)($days);
+        
 
         $data = [
             'id' => $id,

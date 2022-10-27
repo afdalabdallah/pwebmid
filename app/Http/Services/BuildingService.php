@@ -27,7 +27,7 @@ class BuildingService
     {
         $tableData = DB::table('building')->where('id', $id);
         $tableData = $tableData->get();
-        return (['buldingData' => $tableData]);
+        return ($tableData);
     }
 
     public static function insertData($requestData)

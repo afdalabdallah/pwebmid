@@ -11,7 +11,6 @@
     <title>@yield('title')</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -25,11 +24,11 @@
 <body>
     <div id="app">
         <header>
-            <img src="img/Logo.png" alt="">
+            <img src="/img/Logo.png" alt="">
             <nav>
                 <ul class="nav__links">
                     <li><a href="/home">Beranda</a></li>
-                    <li><a href="">Keranjang</a></li>
+                    <li><a href="/keranjang">Keranjang</a></li>
                     <li>
                         @auth()
                             <a href="{{ route('logout') }}"
@@ -60,10 +59,10 @@
                 <h5>Comfortable rooms, safe facilities, we are the solution
                 </h5>
                 <div class="socialMedia">
-                    <img src="./img/Facebook.png" alt="">
-                    <img src="./img/Instagram.png" alt="">
-                    <img src="./img/Twitter.png" alt="">
-                    <img src="./img/Linkedin.png" alt="">
+                    <img src="/img/Facebook.png" alt="">
+                    <img src="/img/Instagram.png" alt="">
+                    <img src="/img/Twitter.png" alt="">
+                    <img src="/img/Linkedin.png" alt="">
                 </div>
             </div>
 

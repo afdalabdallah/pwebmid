@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: none;
+    font-family: poppins, sans-serif;
+}
+
+
+header {
+    width: 100%;
+    top: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 2%;
+    background-color: #000000;
+    position: fixed;
+}
+
+/* body {
+    margin-top: 5%;
+} */
+h1 {
+    margin: 5% 0;
+}
+
+.nav__links a {
+    list-style: none;
+    text-decoration: none;
+    color: #2DBE78;
+    font-weight: 500;
+    font-size: 36px;
+}
+
+.nav__links li {
+    display: inline-block;
+    padding: 0px 40px;
+}
+
+.nav__links li a:hover {
+    transition: all 0.3s ease 0s;
+    color: white;
+}
+
+.nav__links li:nth-child(3) {
+    background-color: #2DBE78;
+    border-radius: 58px;
+}
+
+.nav__links li:nth-child(3) a {
+    color: black;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.keranjangBelanja {
+    font-size: 40px;
+    padding: 5%;
+}
+
+.keranjangBelanja table {
+    width: 100%;
+    background-color: #2DBE78;
+    border: none;
+    border-spacing: none;
+    border-collapse: collapse;
+}
+
+.keranjangBelanja thead {
+    /* background-color: #191414; */
+    color: white;
+    font-weight: 900;
+    border-radius: 38px 38px 0 0;
+}
+
+.keranjangBelanja thead tr {
+
+    border-radius: 38px 38px 0 0;
+}
+
+.keranjangBelanja thead td {
+    padding: 40px;
+    background-color: #191414;
+}
+
+.keranjangBelanja tr {
+    border: none;
+    padding: 2%;
+    vertical-align: top;
+}
+
+.keranjangBelanja td {
+    border: 0;
+    padding: 20px;
+}
+
+.alamatItem {
+    width: 35%;
+}
+
+#totalText {
+    text-align: center;
+    font-weight: 700;
+    font-size: 48px;
+}
+
+#totalNumber {
+    text-align: center;
+    font-weight: 48px;
+    font-weight: 700;
+}
+
+.noItem {
+    text-align: center;
+}
+
+.aksiItem {
+    display: flex;
+    justify-content: space-around;
+}
+
+h5 {
+    color: #7F7F7F;
+    font-size: 24px;
+    font-weight: 500;
+    margin: 2% 0;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #000000;
+    padding: 5%;
+}
+
+.contact p {
+    color: #2DBE78;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.contact span {
+    color: white;
+}
+
+.contact h5 {
+    width: 70%;
+}
+
+footer table {
+    color: white;
+    width: 50%;
+
+}
+
+
+footer td {
+    height: 70px;
+    text-align: left;
+
+}
+
+footer th {
+    height: 50px;
+    text-align: left;
+
+
+}

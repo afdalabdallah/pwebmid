@@ -32,7 +32,7 @@
                             <div class="roomDesc">
                                 <div>
                                     <h4>{{ $data->name }}</h4>
-                                    <h5>See Details!</h5>
+                                    <h5><a style="text-decoration: none" href="/detail/{{$data->id}}">See Details!</a></h5>
                                 </div>
                                 <img src="/img/Arrow.png" alt="">
                             </div>
@@ -50,7 +50,7 @@
                             <div class="roomDesc">
                                 <div>
                                     <h4>{{ $data->name }}</h4>
-                                    <h5>See Details!</h5>
+                                    <h5> <h5><a style="text-decoration: none" href="/detail/{{$data->id}}">See Details!</a></h5></h5>
                                 </div>
                                 <img src="/img/Arrow.png" alt="">
                             </div>

@@ -13,20 +13,16 @@ class BuildingController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function getBuildingData()
+    public function getBuildingData($b_id)
     {
         $getTable = new BuildingService();
-        $buildingData = $getTable->getData();
-        return ($buildingData);
+        $buildingData = $getTable->getDetail($b_id);
+        return view('detail_gedung')->with(["buildingData"=>$buildingData]);
     }
 }

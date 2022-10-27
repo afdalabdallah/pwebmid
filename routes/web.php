@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BuildingController;
+use App\Http\Controllers\RentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +29,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Auth::routes();
 
-Route::get('/building', [BuildingController::class, 'getBuildingData']);
+Route::get('/keranjang', [RentController::class, 'getRentData']);
+Route::get('/detail/{id}', [BuildingController::class, 'getBuildingData']);
+
+Route::post('/keranjang/insert/{id}',[RentController::class, 'insertRent']);
+Route::post('/keranjang/delete/{id}',[RentController::class, 'deleteRent']);

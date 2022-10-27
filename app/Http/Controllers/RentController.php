@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Services\RentService;
+use App\Http\Services\BuildingService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -25,11 +26,12 @@ class RentController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function getRentData($id_user)
+    public function getRentData()
     {
+        $id_user = Auth::id();
         $getTable = new RentService();
         $rentData = $getTable->getData($id_user);
-        return ($rentData);
+        return view('keranjang')->with(["rentData"=>$rentData]);
         //return view
     }
 
@@ -42,17 +44,21 @@ class RentController extends Controller
 
     }
 
-    public function insertRent()
+    public function insertRent($id)
     {
         $rentService = new RentService();
+        $buildingData = new BuildingService();
+        $buildingDetail = $buildingData->getDetail($id);
+
         $requestData = [
             'user_id' => Auth::id(),
-            'building_id' => Request()->building_id,
+            'building_id' => $id,
             'start_time' => Request()->start_time,
-            'end_time' => Request()->end_time
+            'end_time' => Request()->start_time,
+            'price' => $buildingDetail[0]->price,
         ];
         $rentService->insertData($requestData);
-        //return view
+        return redirect('/home'); //temp return, ganti ke keranjang klo udah jadi 
     }
 
     public function updateRent($id)
@@ -74,6 +80,7 @@ class RentController extends Controller
     {
         $getTable = new RentService();
         $getTable->deleteData($id);
+        return redirect('/keranjang');
         //return view
     }
 }

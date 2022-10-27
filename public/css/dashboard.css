@@ -192,6 +192,15 @@ h5 {
     margin: 2% 0;
 }
 
+
+h5 a {
+    color: #7f7f7f;
+    font-size: 24px;
+    font-weight: 500;
+    margin: 2% 0;
+}
+
+
 footer {
     display: flex;
     justify-content: space-between;

@@ -23,6 +23,13 @@ class BuildingController extends Controller
     {
         $getTable = new BuildingService();
         $buildingData = $getTable->getDetail($b_id);
-        return view('detail_gedung')->with(["buildingData"=>$buildingData]);
+        return view('detail_gedung')->with(["buildingData" => $buildingData]);
+    }
+
+    public function UpdateBuildingData($b_id)
+    {
+        $getTable = new BuildingService();
+        $buildingData = $getTable->getDetail($b_id);
+        return view('update')->with(["buildingData" => $buildingData]);
     }
 }

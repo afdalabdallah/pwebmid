@@ -9,7 +9,7 @@
 @section('content')
 
     <body>
-        <div class="container">
+        <div class="container-fluid">
             <div class="searchRoom">
                 <img src="/img/searchBuilding.png" id="searchImage" alt="">
                 <div class="searchDesc">
@@ -21,7 +21,7 @@
                     </div>
                 </div>
             </div>
-            <h2>Pilihan Gedung</h2>
+            <h2>Building Choices</h2>
 
             <div class="roomCol">
                 <h3>Seminar Room</h3>
@@ -32,9 +32,12 @@
                             <div class="roomDesc">
                                 <div>
                                     <h4>{{ $data->name }}</h4>
-                                    <h5><a style="text-decoration: none" href="/detail/{{$data->id}}">See Details!</a></h5>
+                                    <h5><a style="text-decoration: none" href="/detail/{{ $data->id }}">See Details!</a>
+                                    </h5>
                                 </div>
-                                <img src="/img/Arrow.png" alt="">
+                                <a style="text-decoration: none" href="/detail/{{ $data->id }}">
+                                    <img src="/img/Arrow.png" alt="">
+                                </a>
                             </div>
                         </div>
                     @endforeach
@@ -50,9 +53,14 @@
                             <div class="roomDesc">
                                 <div>
                                     <h4>{{ $data->name }}</h4>
-                                    <h5> <h5><a style="text-decoration: none" href="/detail/{{$data->id}}">See Details!</a></h5></h5>
+                                    <h5>
+                                        <h5><a style="text-decoration: none" href="/detail/{{ $data->id }}">See
+                                                Details!</a></h5>
+                                    </h5>
                                 </div>
-                                <img src="/img/Arrow.png" alt="">
+                                <a style="text-decoration: none" href="/detail/{{ $data->id }}">
+                                    <img src="/img/Arrow.png" alt="">
+                                </a>
                             </div>
                         </div>
                     @endforeach

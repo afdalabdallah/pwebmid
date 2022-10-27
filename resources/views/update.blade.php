@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Detail Building | Rent.me')
+@section('title', 'Detail | Rent.me')
 @section('stylesheet')
     <link rel="stylesheet" href={{ asset('css/detail.css') }}>
 @endsection
@@ -22,7 +22,7 @@
     <div class="detailGedung">
         <h1>Building Details</h1>
         <div class="detailGedungDesc">
-            <form action="/keranjang/insert/{{ $buildingData[0]->id }}" method="post">
+            <form action="/keranjang/update/{{ $buildingData[0]->id }}" method="post">
                 @csrf
                 <table style="width:100%;">
                     <tbody>
@@ -62,7 +62,7 @@
                             <td colspan="3">
                                 <div class="bookButton">
                                     {{-- <button type="submit" id="backButton">Back</button> --}}
-                                    <button type="submit" id="bookingButton">Booking</button>
+                                    <button type="submit" id="bookingButton">Update</button>
                                 </div>
                             </td>
                         </tr>

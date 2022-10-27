@@ -1,107 +1,83 @@
 @extends('layouts.app')
 
-@section('title', 'Dashboard | Rent.me')
+@section('title', 'Cart | Rent.me')
 
 @section('stylesheet')
     <link rel="stylesheet" href={{ asset('css/keranjang.css') }}>
 @endsection
 @section('content')
-<div class="container">
-    <div class="keranjangBelanja">
-        <h1>Keranjang Belanja</h1>
-        <table>
-            <thead>
-                <tr>
-                    <td class="noItem">No</td>
-                    <td class="namaItem">Nama</td>
-                    <td class="hargaItem">Harga</td>
-                    <td class="aksiItem">Aksi</td>
-                </tr>
+    <div class="container-fluid">
+        {{-- Modal --}}
+        @foreach ($rentData as $data)
+            <div class="modal fade" id={{ $data->id }} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">{{ $data->name }}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Would you like to delete</p>
+                            <p>Rent {{ $data->name }}</p>
+                            <p>At {{ $data->start_time }}</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"
+                                onclick="event.preventDefault();
+                            document.getElementById('delete-button').submit();">Yes</button>
+                            <form id="delete-button" action="/keranjang/delete/{{ $data->id }}" method="POST">
+                                @csrf
 
-            </thead>
-
-            <tbody>
-                @foreach ($rentData as $data)
-                    <tr>
-                        <td class="noItem">1</td>
-                        <td class="namaItem">{{$data->name}}</td>
-                        <td class="hargaItem">Rp {{$data->total_price}}</td>
-                        <td class="aksiItem">
-                            <a><img src="/img/Edit.svg" alt=""></a>
-                            <a href="/keranjang/delete/{{$data->id}}"><img src="/img/Delete.svg" alt=""></a>
-                        </td>
-                    </tr>
-                @endforeach
-                <tr id="totalPrice">
-                    <td colspan="3" id="totalText">Total</td>
-                    <td id="totalNumber" colspan="2">Rp. 690.000.000</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <footer>
-        <div class="contact">
-            <p>Rent<span>Me</span></p>
-            <h5>Comfortable rooms, safe facilities, we are the solution
-            </h5>
-            <div class="socialMedia">
-                <img src="./img/Facebook.png" alt="">
-                <img src="./img/Instagram.png" alt="">
-                <img src="./img/Twitter.png" alt="">
-                <img src="./img/Linkedin.png" alt="">
+                            </form>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
+                        </div>
+                    </div>
+                </div>
             </div>
+        @endforeach
+
+        <div class="keranjangBelanja">
+            <h1>Your Cart</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <td class="namaItem">Building Name</td>
+                        <td class="hargaItem">Price</td>
+                        <td class="aksiItem">Action</td>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+                    @foreach ($rentData as $data)
+                        <tr>
+                            <td class="namaItem">{{ $data->name }}</td>
+                            <td class="hargaItem">Rp {{ $data->total_price }}</td>
+                            <td class="aksiItem">
+                                <a href="/keranjang/detail/{{ $data->id }}" class="action-button">
+                                    <img width="45px" src="/img/detail.png" alt="">
+                                </a>
+                                <a href="/keranjang/update/{{ $data->building_id }}" class="action-button">
+                                    <img width="45px" src="/img/edit.png" alt="">
+                                </a>
+                                <a class="action-button">
+                                    <img data-toggle="modal" data-target="#{{ $data->id }}" data src="/img/Delete.svg"
+                                        alt="">
+                                </a>
+                            </td>
+                        </tr>
+                    @endforeach
+                    <tr id="totalPrice">
+                        <td colspan="2" id="totalText">Total</td>
+                        <td id="totalNumber" colspan="1">Rp {{ $totalPrice }}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>
-                        <h5>Company</h5>
-                    </th>
-                    <th>
-                        <h5>Company Links</h5>
-                    </th>
-                    <th>
-                        <h5>Legal</h5>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <h5>About</h5>
-                    </td>
-                    <td>
-                        <h5>Share Location</h5>
-                    </td>
-                    <td>
-                        <h5>Terms & Condition</h5>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <h5>Contact Us</h5>
-                    </td>
-                    <td>
-                        <h5>FAQs</h5>
-                    </td>
-                    <td>
-                        <h5>Privacy Policy</h5>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <h5>Support</h5>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <h5>Careers</h5>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </footer>
 
-</div>
+    </div>
 @endsection

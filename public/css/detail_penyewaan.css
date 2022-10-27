@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -23,8 +21,15 @@ header {
 /* body {
     margin-top: 5%;
 } */
+
 h1 {
-    margin: 5% 0;
+    font-size: 46px;
+    margin: 10px 0;
+    font-weight: 900;
+}
+
+body {
+    margin-top: 5%;
 }
 
 .nav__links a {
@@ -57,73 +62,61 @@ h1 {
 .container {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
-    width: 70%;
 }
 
-.keranjangBelanja {
-    font-size: 40px;
-    padding: 5%;
+.detailGedung {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 5% 5% 5%;
 }
 
-.keranjangBelanja table {
-    width: 100%;
+.detailGedung table {
     background-color: #2dbe78;
-    border: none;
-    border-spacing: none;
-    border-collapse: collapse;
+    width: 80%;
+    font-size: 40px;
+    font-weight: 500;
+    margin: auto;
 }
 
-.keranjangBelanja thead {
-    /* background-color: #191414; */
-    color: white;
-    font-weight: 900;
-    border-radius: 38px 38px 0 0;
-    background-color: #191414;
+.detailGedung table {
+    padding: 50px;
+    border-radius: 60px;
 }
 
-.keranjangBelanja thead tr {
-    border-radius: 38px 38px 0 0;
-}
-
-.keranjangBelanja thead td {
-    padding: 40px;
-}
-
-.keranjangBelanja tr {
-    border: none;
-    padding: 2%;
+.detailGedung tr {
     vertical-align: top;
 }
 
-.keranjangBelanja td {
-    border: 0;
-    padding: 20px;
+.detailGedung td {
+    padding: 2%;
+    align-items: flex-start;
 }
 
-.alamatItem {
-    width: 35%;
+.detailGedung td:nth-child(1) {
+    width: 40%;
+    text-align: left;
 }
 
-#totalText {
-    text-align: center;
-    font-weight: 700;
-    font-size: 48px;
+.detailGedung td:nth-child(3) {
+    /* width: ; */
+    text-align: left;
+    padding-left: 5%;
 }
 
-#totalNumber {
-    text-align: center;
-    font-weight: 48px;
-    font-weight: 700;
+.detailGedungDesc {
+    width: 80%;
 }
 
-.noItem {
-    text-align: center;
-}
-
-.aksiItem {
-    display: flex;
-    justify-content: space-around;
+.detailGedungDesc input {
+    width: 300px;
+    height: 80px;
+    font-size: 30px;
+    border-radius: 36px;
+    padding: 2%;
+    border: none;
 }
 
 h5 {
@@ -138,10 +131,11 @@ footer {
     justify-content: space-between;
     background-color: #000000;
     padding: 5%;
+    width: 100%;
 }
 
 .contact p {
-    color: #2dbe78;
+    color: #81d8ae;
     font-size: 40px;
     font-weight: 900;
 }
@@ -167,8 +161,4 @@ footer td {
 footer th {
     height: 50px;
     text-align: left;
-}
-
-.action-button:hover {
-    cursor: pointer;
 }

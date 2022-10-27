@@ -25,10 +25,10 @@ class RentService
     {
         $tableData = DB::table('rents')
             ->join('building', 'building.id', '=', 'rents.building_id')
-            ->select('rents.*', 'building.name', 'building.price', 'building.address')
+            ->select('rents.*', 'building.area', 'building.name', 'building.price', 'building.address')
             ->where('rents.id', $id);
         $tableData = $tableData->get()->first();
-        return (['rentDetail' => $tableData]);
+        return ($tableData);
     }
 
     public static function insertData($requestData)
@@ -49,12 +49,12 @@ class RentService
         $interval = $datetime1->diff($datetime2);
         $days = $interval->format('%a');
 
-        if($days == 0){
+        if ($days == 0) {
             $days += 1;
         }
 
         $total_price = (float)$requestData['price'] * (float)($days);
-        
+
 
         $data = [
             'id' => $id,
@@ -79,6 +79,10 @@ class RentService
 
         $interval = $datetime1->diff($datetime2);
         $days = $interval->format('%a');
+
+        if ($days == 0) {
+            $days += 1;
+        }
 
         $total_price = (float)$requestData['total_price'] * (float)($days);
 

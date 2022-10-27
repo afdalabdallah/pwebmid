@@ -31,7 +31,11 @@ class RentController extends Controller
         $id_user = Auth::id();
         $getTable = new RentService();
         $rentData = $getTable->getData($id_user);
-        return view('keranjang')->with(["rentData"=>$rentData]);
+        $total_price = 0;
+        foreach ($rentData as $data) {
+            $total_price += $data->price;
+        }
+        return view('keranjang')->with(["rentData" => $rentData])->with('totalPrice', $total_price);
         //return view
     }
 
@@ -39,7 +43,7 @@ class RentController extends Controller
     {
         $getTable = new RentService();
         $rentDetail = $getTable->getDetail($id);
-        return ($rentDetail);
+        return view('detail_penyewaan')->with(['rentDetail' => $rentDetail]);
         //return view
 
     }
@@ -58,7 +62,7 @@ class RentController extends Controller
             'price' => $buildingDetail[0]->price,
         ];
         $rentService->insertData($requestData);
-        return redirect('/home'); //temp return, ganti ke keranjang klo udah jadi 
+        return redirect('/keranjang'); //temp return, ganti ke keranjang klo udah jadi 
     }
 
     public function updateRent($id)
@@ -67,13 +71,13 @@ class RentController extends Controller
         $requestData = [
             'building_id' => Request()->building_id,
             'start_time' => Request()->start_time,
-            'end_time' => Request()->end_time,
+            'end_time' => Request()->start_time,
             'total_price' => '',
             'updated_at' => Carbon::now()->toDateTimeString()
         ];
 
         $getTable->updateData($id, $requestData);
-        //return view;
+        return redirect('/keranjang');
     }
 
     public function deleteRent($id)

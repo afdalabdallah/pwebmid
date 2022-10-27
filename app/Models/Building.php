@@ -20,9 +20,10 @@ class Rents extends Authenticatable
     protected $fillable = [
         'name',
         'address',
+        'category',
         'area',
         'price',
+        'image',
         'status'
     ];
-
 }

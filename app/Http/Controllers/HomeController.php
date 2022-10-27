@@ -26,6 +26,11 @@ class HomeController extends Controller
     {
         $getTable = new BuildingService();
         $buildingData = $getTable->getData();
-        return view('dashboard', ["buildingData" => $buildingData]);
+        $getSeminar = $getTable->getCategory('seminar');
+        $getTheater = $getTable->getCategory('theater');
+        return view('dashboard')
+            ->with('buildingData', $buildingData)
+            ->with("seminarBuilding", $getSeminar)
+            ->with("theaterBuilding", $getTheater);
     }
 }

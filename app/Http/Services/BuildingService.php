@@ -16,6 +16,13 @@ class BuildingService
         return ($tableData);
     }
 
+    public static function getCategory($category)
+    {
+        $tableData = DB::table('building')->where('category', $category);
+        $tableData = $tableData->get();
+        return ($tableData);
+    }
+
     public static function getDetail($id)
     {
         $tableData = DB::table('building')->where('id', $id);

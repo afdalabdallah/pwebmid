@@ -17,14 +17,16 @@ header {
     align-items: center;
     padding: 1% 2%;
     background-color: #000000;
-    position: fixed;
+    position: sticky;
+    z-index: 2;
 }
 
 .container {
-    margin-top: 20vh;
+    margin-top: 5vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 header img {
@@ -87,7 +89,7 @@ header img {
     align-items: center;
     justify-content: space-between;
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 70%;
@@ -101,4 +103,126 @@ h1 {
     color: white;
     font-size: 96px;
     font-weight: 900;
+}
+
+.searchForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.searchForm img {
+    background-color: white;
+    border-radius: 60px 0 0 60px;
+    height: 80px;
+    width: auto;
+}
+
+.searchForm input {
+    width: 600px;
+    height: 80px;
+    margin: 0;
+    /* border-radius: 60px 0 0 60px; */
+    border: none;
+}
+
+.searchForm input::placeholder {
+    font-size: 24px;
+}
+
+.searchForm input[type="text"] {
+    padding: 0 24px;
+    font-size: 24px;
+}
+
+.searchForm button {
+    width: 200px;
+    height: 80px;
+    margin: 0;
+    border: none;
+    background-color: #000000;
+    color: #2dbe78;
+    font-size: 36px;
+    font-weight: 600;
+    border-radius: 0 60px 60px 0;
+}
+
+.roomDesc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.roomCol {
+    width: 100%;
+    padding: 0 0 0 5%;
+    margin-bottom: 5%;
+}
+
+.roomRow {
+    display: flex;
+    overflow: scroll;
+}
+
+.room {
+    margin: 0 2%;
+}
+
+h2 {
+    font-size: 48px;
+    margin: 2% 0;
+}
+
+h3 {
+    font-size: 36px;
+    margin: 2% 0;
+}
+
+h4 {
+    font-size: 32px;
+    font-weight: 500;
+    margin: 2% 0;
+}
+
+h5 {
+    color: #7f7f7f;
+    font-size: 24px;
+    font-weight: 500;
+    margin: 2% 0;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #000000;
+    padding: 5%;
+}
+
+.contact p {
+    color: #2dbe78;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.contact span {
+    color: white;
+}
+
+.contact h5 {
+    width: 70%;
+}
+
+table {
+    color: white;
+    width: 50%;
+    text-align: left;
+}
+
+td {
+    height: 70px;
+}
+
+th {
+    height: 50px;
 }
